@@ -3,9 +3,6 @@ name: Update Changelog
 on:
   release:
     types: [released]
-    
-permissions:
-  contents: write
 
 jobs:
   update:
@@ -29,3 +26,4 @@ jobs:
           branch: ${{ github.event.release.target_commitish }}
           commit_message: Update CHANGELOG
           file_pattern: CHANGELOG.md
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
