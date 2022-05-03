@@ -25,7 +25,7 @@ categories:
       - changelog:security
   - title: 'Dependency Updates'
     labels:
-      - dependencies
+      - 'Component: Dependencies'
 
 version-resolver:
   major:
@@ -39,7 +39,7 @@ version-resolver:
     labels:
       - 'changelog:fixed'
       - 'changelog:security'
-      - 'dependency'
+      - 'Component: Dependencies'
 
 exclude-labels:
-  - 'skip-changelog'
+  - 'changelog:skip'
