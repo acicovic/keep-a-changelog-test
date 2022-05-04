@@ -32,5 +32,6 @@ jobs:
         with:
           #branch: ${{ github.event.release.target_commitish }}
           branch: trunk
+          commit_options: '--signoff'
           commit_message: Update CHANGELOG
           file_pattern: CHANGELOG.md
