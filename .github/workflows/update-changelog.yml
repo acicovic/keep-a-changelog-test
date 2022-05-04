@@ -4,10 +4,10 @@ on:
   release:
     types: [released]
     
-permissions:
-  actions: write
-  contents: write
-  packages: write
+#permissions:
+#  actions: write
+#  contents: write
+#  packages: write
 
 jobs:
   update:
@@ -27,9 +27,10 @@ jobs:
 
       - name: Commit updated CHANGELOG
         uses: stefanzweifel/git-auto-commit-action@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #env:
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          branch: ${{ github.event.release.target_commitish }}
+          #branch: ${{ github.event.release.target_commitish }}
+          branch: trunk
           commit_message: Update CHANGELOG
           file_pattern: CHANGELOG.md
