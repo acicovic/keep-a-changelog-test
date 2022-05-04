@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.3.0 - 2022-05-04
+
+## Added
+
+- Develop add 2 ([#14](https://github.com/acicovic/keep-a-changelog-test/pull/14))
+- Develop add 1 ([#13](https://github.com/acicovic/keep-a-changelog-test/pull/13))
+- Update readme.txt ([#11](https://github.com/acicovic/keep-a-changelog-test/pull/11))
+
+## Fixed
+
+- Update readme.txt (line 7 ([#10](https://github.com/acicovic/keep-a-changelog-test/pull/10))
+
 ## 0.2.2 - 2022-05-04
 
 ## Changed
