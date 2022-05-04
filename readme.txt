@@ -12,3 +12,4 @@ This is not just a plugin, it symbolizes the hope and enthusiasm of an entire ge
 
 Thanks to Sanjib Ahmad for the artwork.
 new line
+new line 2
