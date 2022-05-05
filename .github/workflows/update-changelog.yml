@@ -35,3 +35,11 @@ jobs:
           commit_options: '--signoff'
           commit_message: Update CHANGELOG
           file_pattern: CHANGELOG.md
+
+      - name: Merge trunk to develop
+        uses: devmasx/merge-branch@v1
+        with:
+          type: now
+          from_branch: trunk
+          target_branch: develop
+          github_token: ${{ github.token }}
