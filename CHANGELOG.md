@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.0 - 2022-05-05
+
+## Added
+
+- Create test.php ([#17](https://github.com/acicovic/keep-a-changelog-test/pull/17))
+
+## Changed
+
+- Update readme.txt ([#18](https://github.com/acicovic/keep-a-changelog-test/pull/18))
+- Update readme.txt ([#16](https://github.com/acicovic/keep-a-changelog-test/pull/16))
+
 ## 0.4.0 - 2022-05-04
 
 blah blah
