@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.5.3 - 2022-05-05
+
+- Update update-changelog.yml ([#24](https://github.com/acicovic/keep-a-changelog-test/pull/24))
+
 ## 0.5.0 - 2022-05-05
 
 ## Added
