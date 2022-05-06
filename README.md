@@ -1,56 +1,41 @@
-4. After it's installed, click _Activate_ to activate the plugin on your site.
+# Parse.ly
 
-### Install the plugin manually
+Stable tag: 3.3.1  
+Requires at least: 5.0  
+Tested up to: 5.9.3  
+Requires PHP: 7.1  
+License: GPLv2 or later  
+License URI: https://www.gnu.org/licenses/gpl-2.0.html  
+Tags: analytics, content marketing, parse.ly, parsely, parsley  
+Contributors: parsely, hbbtstar, jblz, mikeyarce, GaryJ, parsely_mike, pauargelaguet, acicovic
 
-1. Download the plugin from [WordPress.org](https://wordpress.org/plugins/wp-parsely/) or get the latest release from our [Github Releases page](https://github.com/Parsely/wp-parsely/releases).
-2. Unzip the downloaded archive.
-3. Upload the entire `wp-parsely` folder to your `/wp-content/plugins` directory.
-4. Visit the Plugins page from your WordPress dashboard and look for the newly installed Parse.ly plugin.
-5. Click _Activate_ to activate the plugin on your site.
+The Parse.ly plugin facilitates real-time and historical analytics to your content through a platform designed and built for digital publishing.
 
-Note that this method is the recommended one for installing old versions of the plugin. Those can be downloaded from [WordPress.org](https://wordpress.org/plugins/wp-parsely/advanced/) or the GitHub Releases page.
+## Description
 
-## Local development
+Designed and built for digital publishers, Parse.ly helps you understand how your audience is connecting to your content.
 
-Development, code hosting and issue tracking of this plugin happens on the [wp-parsely GitHub repository](https://github.com/Parsely/wp-parsely/). Active development happens on the `develop` branch and releases are made off the `trunk` branch.
+Thousands of writers, editors, site managers, and technologists already use Parse.ly to understand what content draws in website visitors, and why. Using our powerful dashboards and APIs, customers build successful digital strategies that allow them to grow and engage a loyal audience.
 
-To run the plugin locally or to contribute to it, please check the instructions in the [CONTRIBUTING](https://github.com/parsely/wp-parsely/blob/trunk/CONTRIBUTING.md) file.
+Join industry leaders -- like Mashable, Slate, News Corp, and Conde Nast -- who already use Parse.ly to bring clarity to content, audience, and analytics.
 
-## Sample Parse.ly metadata
+### Features
 
-The standard Parse.ly JavaScript tracker inserted before the closing `body` tag:
+- Get started with Parse.ly right away: the plugin automatically inserts the required metadata and JavaScript on all your published pages and posts.
+- Choose what format the metadata takes, and whether logged-in users should be included in the analytics.
+- Using it in a decoupled setup? Parse.ly adds metadata to the REST API output for pages, posts and optionally other object types.
+- If you've purchased access to the Parse.ly API, add a widget to your site with article recommendations personalized to individual users.
 
-~~~html
-<script id="parsely-cfg" data-parsely-site="example.com" src="https://cdn.parsely.com/keys/example.com/p.js"></script>
-~~~
+Feedback, suggestions, questions or concerns? Open a new [GitHub issue](https://github.com/Parsely/wp-parsely/issues) or email us at [support@parsely.com](mailto:support@parsely.com). We always want to hear from you!
 
-A sample `JSON-LD` structured data for a home page or section page:
+### Documentation
 
-~~~html
-<script type="application/ld+json">
-{"@context":"http:\/\/schema.org","@type":"WebPage","headline":"WordPress VIP","url":"http:\/\/wpvip.com\/"}
-</script>
-~~~
+If you are looking for the plugin's documentation and how to set up your WordPress site with Parse.ly, take a look at [the Parse.ly integration docs](https://www.parsely.com/help/integration/wordpress).
 
-A sample `JSON-LD` meta tag and structured data for an article or post:
+In case you are a WordPress VIP customer, [VIP's documentation](https://docs.wpvip.com/technical-references/plugins/parse-ly/) will be also useful for you.
 
-~~~html
-<script type="application/ld+json">
-{"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/wpvip.com\/2021\/04\/09\/how-the-wordpress-gutenberg-block-editor-empowers-enterprise-content-creators\/"},"headline":"How the WordPress Gutenberg Block Editor Empowers Enterprise Content Creators","url":"http:\/\/wpvip.com\/2021\/04\/09\/how-the-wordpress-gutenberg-block-editor-empowers-enterprise-content-creators\/","thumbnailUrl":"https:\/\/wpvip.com\/wp-content\/uploads\/2021\/04\/ladyatdesk.png?w=120","image":{"@type":"ImageObject","url":"https:\/\/wpvip.com\/wp-content\/uploads\/2021\/04\/ladyatdesk.png?w=120"},"dateCreated":"2021-04-09T15:13:13Z","datePublished":"2021-04-09T15:13:13Z","dateModified":"2021-04-09T15:13:13Z","articleSection":"Gutenberg","author":[{"@type":"Person","name":"Sam Wendland"}],"creator":["Sam Wendland"],"publisher":{"@type":"Organization","name":"The Enterprise Content Management Platform | WordPress VIP","logo":"https:\/\/wpvip.com\/wp-content\/uploads\/2020\/11\/cropped-favicon-dark.png"},"keywords":[]}
-</script>
-~~~
+## Installation
 
-## The Parse.ly Recommendations Block
+The plugin requires an active Parse.ly account. [Sign up for a free demo of Parse.ly](https://www.parsely.com/getdemo?utm_medium=referral&utm_source=wordpress.org&utm_content=wp-parsely).
 
-**IMPORTANT:** The Recommendations Block is available only in WordPress 5.9 and later.
-
-The plugin includes a Recommendations Block that uses the [Parse.ly API](https://www.parse.ly/help/api/recommendations#get-related) to showcase links to content on your site. More information about the Block [can be found here](https://www.parse.ly/help/integration/recommendations-block).
-
-## Screenshots
-
-1. Parse.ly plugin main settings for easy setup. For the plugin to start working, only the website ID is needed.  
-   ![The main settings screen of the wp-parsely plugin](.wordpress-org/screenshot-1.png)
-2. Parse.ly plugin settings that require you to submit a website recrawl request whenever you update them.  
-   ![The main settings screen of the wp-parsely plugin](.wordpress-org/screenshot-2.png)
-3. Parse.ly plugin advanced settings. To be used only if instructed by Parse.ly staff.  
-   ![The main settings screen of the wp-parsely plugin](.wordpress-org/screenshot-3.png)
+### Install the plugin from within WordPress
