@@ -1,13 +1,8 @@
-name: Update Changelog
+name: Update trunk changelog and merge back to develop branch
 
 on:
   release:
     types: [released]
-    
-#permissions:
-#  actions: write
-#  contents: write
-#  packages: write
 
 jobs:
   update:
@@ -19,24 +14,20 @@ jobs:
         with:
           ref: ${{ github.event.release.target_commitish }}
 
-      - name: Update Changelog
+      - name: Update changelog
         uses: stefanzweifel/changelog-updater-action@v1
         with:
           latest-version: ${{ github.event.release.tag_name }}
           release-notes: ${{ github.event.release.body }}
 
-      - name: Commit updated CHANGELOG
+      - name: Commit changelog to trunk
         uses: stefanzweifel/git-auto-commit-action@v4
-        #env:
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          #branch: ${{ github.event.release.target_commitish }}
           branch: trunk
-          commit_options: '--signoff'
-          commit_message: Update CHANGELOG
+          commit_message: Import release notes into CHANGELOG.md
           file_pattern: CHANGELOG.md
 
-      - name: Merge trunk to develop
+      - name: Merge trunk back to develop branch
         uses: devmasx/merge-branch@v1.4.0
         with:
           type: now
