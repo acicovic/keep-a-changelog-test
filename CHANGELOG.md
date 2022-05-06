@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## 0.6.0 - 2022-05-06
+
+- Merge develop to trunk ([#34](https://github.com/acicovic/keep-a-changelog-test/pull/34))
+
+## Added
+
+- Create README.md ([#35](https://github.com/acicovic/keep-a-changelog-test/pull/35))
+
 ## 0.5.7 - 2022-05-06
 
 - Update update-changelog.yml ([#33](https://github.com/acicovic/keep-a-changelog-test/pull/33))
