@@ -60,10 +60,10 @@ jobs:
           target_branch: develop
           github_token: ${{ github.token }}
 
-      - name: Merge trunk to ${{ github.event.release.tag_name }} tag
-        uses: devmasx/merge-branch@v1.4.0
-        with:
-          type: now
-          from_branch: trunk
-          target_branch: ${{ github.event.release.tag_name }}
-          github_token: ${{ github.token }}
+#      - name: Merge trunk to ${{ github.event.release.tag_name }} tag
+#        uses: devmasx/merge-branch@v1.4.0
+#        with:
+#          type: now
+#          from_branch: trunk
+#          target_branch: ${{ github.event.release.tag_name }}
+#          github_token: ${{ github.token }}
