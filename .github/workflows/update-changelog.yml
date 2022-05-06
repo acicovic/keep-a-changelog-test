@@ -31,7 +31,7 @@ jobs:
         with:
           branch: trunk
           commit_message: Update plugin version to ${{ github.event.release.tag_name }}
-          file_pattern: readme.txt README.md package-lock.json package.json tests/e2e/utils.js wp-parsely.php
+          file_pattern: readme.txt #README.md package-lock.json package.json tests/e2e/utils.js wp-parsely.php
 
       - name: Update changelog
         uses: stefanzweifel/changelog-updater-action@v1
