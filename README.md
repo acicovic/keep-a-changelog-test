@@ -1,6 +1,6 @@
 # Parse.ly
 
-Stable tag: 0.6.1  
+Stable tag: 0.6.2  
 Requires at least: 5.0  
 Tested up to: 5.9.3  
 Requires PHP: 7.1  
