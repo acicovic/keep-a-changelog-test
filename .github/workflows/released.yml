@@ -14,6 +14,11 @@ jobs:
         with:
           fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
           ref: ${{ github.event.release.target_commitish }}
+          
+      - uses: rickstaa/action-create-tag@v1
+        with:
+          tag: ${{ github.event.release.tag_name }}
+          force_push_tag: true
 
       - name: Merge trunk to develop branch
         uses: devmasx/merge-branch@v1.4.0
@@ -23,10 +28,10 @@ jobs:
           target_branch: develop
           github_token: ${{ github.token }}
 
-      - name: Merge trunk to ${{ github.event.release.tag_name }} tag
-        uses: devmasx/merge-branch@v1.4.0
-        with:
-          type: now
-          from_branch: trunk
-          target_branch: ${{ github.event.release.tag_name }}
-          github_token: ${{ github.token }}
+#      - name: Merge trunk to ${{ github.event.release.tag_name }} tag
+#        uses: devmasx/merge-branch@v1.4.0
+#        with:
+#          type: now
+#          from_branch: trunk
+#          target_branch: ${{ github.event.release.tag_name }}
+#          github_token: ${{ github.token }}
