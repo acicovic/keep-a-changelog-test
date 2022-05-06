@@ -12,6 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
+          fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
           ref: ${{ github.event.release.target_commitish }}
           
       - name: Update version
@@ -22,7 +23,7 @@ jobs:
 #          current_version: '1.0.1'  # Omit to use git tag.
 #          new_version: '1.0.2'  # Omit when running on a release action.
           paths: |
-            README.txt
+            readme.txt
  #           test/subdir/README.md
             
       - name: Commit version to trunk
@@ -30,7 +31,7 @@ jobs:
         with:
           branch: trunk
           commit_message: Update version
-          file_pattern: CHANGELOG.md
+          file_pattern: readme.txt
 
       - name: Update changelog
         uses: stefanzweifel/changelog-updater-action@v1
