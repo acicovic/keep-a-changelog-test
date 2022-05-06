@@ -15,9 +15,9 @@ jobs:
           fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
           ref: ${{ github.event.release.target_commitish }}
           
-      - name: Update version
+      - name: Update plugin version numbers
         uses: tj-actions/sync-release-version@v11
-        id: sync-release-version
+#        id: sync-release-version
         with:
           pattern: 'version='
 #          current_version: '1.0.1'  # Omit to use git tag.
@@ -30,8 +30,8 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: trunk
-          commit_message: Update version
-          file_pattern: readme.txt
+          commit_message: Update plugin version to ${{ github.event.release.tag_name }}
+          file_pattern: readme.txt README.md package-lock.json package.json tests/e2e/utils.js wp-parsely.php
 
       - name: Update changelog
         uses: stefanzweifel/changelog-updater-action@v1
