@@ -12,7 +12,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
+          fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
           ref: ${{ github.event.release.target_commitish }}
+          
+      - name: Update version
+        uses: tj-actions/sync-release-version@v11
+        id: sync-release-version
+        with:
+          pattern: 'version='
+#          current_version: '1.0.1'  # Omit to use git tag.
+#          new_version: '1.0.2'  # Omit when running on a release action.
+          paths: |
+            readme.txt
+ #           test/subdir/README.md
+            
+      - name: Commit version to trunk
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: trunk
+          commit_message: Update version
+          file_pattern: readme.txt
 
       - name: Update changelog
         uses: stefanzweifel/changelog-updater-action@v1
