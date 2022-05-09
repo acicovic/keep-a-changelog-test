@@ -21,13 +21,13 @@ jobs:
           pattern: 'Stable tag: '
           paths: README.md
           
-      - name: Update plugin version in package
-        uses: tj-actions/sync-release-version@v11
-        with:
-          pattern: '\{\n[ \t]*\"name\": \"wp-parsely\",\n[ \t]*\"version\": \"'
-          paths: |
-            package-lock.json
-            package.json
+#      - name: Update plugin version in package
+#        uses: tj-actions/sync-release-version@v11
+#        with:
+#          pattern: '\{\n[ \t]*\"name\": \"wp-parsely\",\n[ \t]*\"version\": \"'
+#          paths: |
+#            package-lock.json
+#            package.json
             
       - name: Update plugin version in tests/e2e/utils.js
         uses: tj-actions/sync-release-version@v11
