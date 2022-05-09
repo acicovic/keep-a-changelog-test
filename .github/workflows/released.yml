@@ -23,7 +23,7 @@ jobs:
           target_branch: develop
           github_token: ${{ github.token }}
           
-      - uses: rickstaa/action-create-tag@v1
+      - uses: rickstaa/action-create-tag@v1.3.1
         with:
           tag: ${{ github.event.release.tag_name }}
           force_push_tag: true
