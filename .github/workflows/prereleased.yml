@@ -1,4 +1,4 @@
-name: Update trunk changelog and merge back to develop branch
+name: Update version numbers and changelog and push them to trunk
 
 on:
   release:
@@ -9,43 +9,59 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
+          fetch-depth: 0
           ref: ${{ github.event.release.target_commitish }}
-          
-      - name: Update plugin version numbers
-        uses: tj-actions/sync-release-version@v11
-#        id: sync-release-version
-        with:
-          pattern: 'version='
-#          current_version: '1.0.1'  # Omit to use git tag.
-#          new_version: '1.0.2'  # Omit when running on a release action.
-          paths: |
-            readme.txt
- #           test/subdir/README.md
  
-      - name: Update plugin version numbers 2
+     # Bump version numbers and push to trunk
+      - name: Update plugin version in README.md
         uses: tj-actions/sync-release-version@v11
         with:
           pattern: 'Stable tag: '
           paths: README.md
+          
+      - name: Update plugin version in package
+        uses: tj-actions/sync-release-version@v11
+        with:
+          pattern: '\{\n[ \t]*"name": "wp-parsely",\n[ \t]*"version": "'
+          paths: |
+            package-lock.json
+            package.json
             
-      - name: Commit version to trunk
+      - name: Update plugin version in tests/e2e/utils.js
+        uses: tj-actions/sync-release-version@v11
+        with:
+          pattern: "export const PLUGIN_VERSION = '"
+          paths: tests/e2e/utils.js
+          
+      - name: Update plugin version in wp-parsely.php - Plugin header
+        uses: tj-actions/sync-release-version@v11
+        with:
+          pattern: ' * Version:           '
+          paths: wp-parsely.php
+          
+      - name: Update plugin version in wp-parsely.php - Version constant
+        uses: tj-actions/sync-release-version@v11
+        with:
+          pattern: "const PARSELY_VERSION = '"
+          paths: wp-parsely.php
+            
+      - name: Commit version bumps to trunk
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: trunk
           commit_message: Update plugin version to ${{ github.event.release.tag_name }}
-          file_pattern: readme.txt README.md #package-lock.json package.json tests/e2e/utils.js wp-parsely.php
+          file_pattern: README.md package-lock.json package.json tests/e2e/utils.js wp-parsely.php
 
+     # Update changelog and push to trunk
       - name: Update changelog
         uses: stefanzweifel/changelog-updater-action@v1
         with:
           latest-version: ${{ github.event.release.tag_name }}
           release-notes: ${{ github.event.release.body }}
 
-      - name: Commit changelog to trunk
+      - name: Commit updated changelog to trunk
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: trunk
