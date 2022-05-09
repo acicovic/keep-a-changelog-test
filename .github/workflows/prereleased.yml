@@ -24,7 +24,7 @@ jobs:
       - name: Update plugin version in package
         uses: tj-actions/sync-release-version@v11
         with:
-          pattern: '\{\n[ \t]*"name": "wp-parsely",\n[ \t]*"version": "'
+          pattern: '\{\n[ \t]*\"name\": \"wp-parsely\",\n[ \t]*\"version\": \"'
           paths: |
             package-lock.json
             package.json
