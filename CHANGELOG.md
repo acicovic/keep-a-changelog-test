@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.0.5 - 2022-05-09
+
+- Merge develop into trunk ([#50](https://github.com/acicovic/keep-a-changelog-test/pull/50))
+
 ## 1.0.4 - 2022-05-09
 
 - Merge develop into trunk ([#49](https://github.com/acicovic/keep-a-changelog-test/pull/49))
