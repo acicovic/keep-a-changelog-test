@@ -38,7 +38,7 @@ jobs:
       - name: Update plugin version in wp-parsely.php - Plugin header
         uses: tj-actions/sync-release-version@v11
         with:
-          pattern: ' * Version:           '
+          pattern: ' \* Version:           '
           paths: wp-parsely.php
           
       - name: Update plugin version in wp-parsely.php - Version constant
