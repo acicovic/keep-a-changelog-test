@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   update_release_draft:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Create a new release draft
         uses: release-drafter/release-drafter@v5
