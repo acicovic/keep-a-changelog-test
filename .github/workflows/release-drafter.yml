@@ -1,14 +1,16 @@
 name: Release Drafter
 
 on:
-  push:
-    branches: [trunk]
+  pull_request:
+    types: [closed]
+    branches: ['trunk']
 
 permissions:
   contents: write
 
 jobs:
   update_release_draft:
+    if: github.event.pull_request.merged == true && github.head_ref == 'develop'
     runs-on: ubuntu-20.04
     steps:
       - name: Create a new release draft
