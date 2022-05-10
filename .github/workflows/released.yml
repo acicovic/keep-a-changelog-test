@@ -1,4 +1,4 @@
-name: Merge trunk to develop and tag
+name: Merge trunk to develop and update tag
 
 on:
   release:
@@ -6,13 +6,13 @@ on:
 
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
+          fetch-depth: 0
           ref: ${{ github.event.release.target_commitish }}
 
       - name: Merge trunk to develop branch
@@ -22,20 +22,13 @@ jobs:
           from_branch: trunk
           target_branch: develop
           github_token: ${{ github.token }}
-          
+
       - name: Set environment variable "trunk_last_commit"
         run: echo "trunk_last_commit=$(git rev-parse trunk)" >> $GITHUB_ENV
-          
+
+      - name: Force push ${{ github.event.release.tag_name }} tag to latest trunk commit
       - uses: rickstaa/action-create-tag@v1.3.1
         with:
           tag: ${{ github.event.release.tag_name }}
           force_push_tag: true
           commit_sha: ${{ env.trunk_last_commit }}
-
-#      - name: Merge trunk to ${{ github.event.release.tag_name }} tag
-#        uses: devmasx/merge-branch@v1.4.0
-#        with:
-#          type: now
-#          from_branch: trunk
-#          target_branch: ${{ github.event.release.tag_name }}
-#          github_token: ${{ github.token }}
