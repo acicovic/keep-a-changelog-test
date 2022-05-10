@@ -183,7 +183,7 @@ The 3.2.0 release introduces many new features, including:
 ### Removed
 
 - Removed unused dependency `@wordpress/i18n`. [#632](https://github.com/Parsely/wp-parsely/pull/632)
- 
+
 ## [3.1.0](https://github.com/Parsely/wp-parsely/compare/3.0.4...3.1.0) - 2022-01-21
 
 The 3.1.0 release is a minor release for the plugin that does not introduce any breaking changes coming from the 3.0 branch. This version's primary focus is adding support for WordPress decoupled architectures and a revamped settings page. We have also worked hard on refining our code, testing, and delivery process.
@@ -511,7 +511,7 @@ If you are using the plugin without any code-level customizations (for instance,
 
 ## [2.0](https://github.com/Parsely/wp-parsely/compare/1.14...2.0) - 2019-04-29
 
-- Change JavaScript integration to directly load tracker bundles that are customized for your specific site ID. See https://www.parse.ly/help/integration/basic/.  
+- Change JavaScript integration to directly load tracker bundles that are customized for your specific site ID. See https://www.parse.ly/help/integration/basic/.
 - NOTE: Sites that have custom Parse.ly video tracking configured (outside the Parse.ly WordPress plugin) for a player listed at https://www.parse.ly/help/integration/video_v2/#supported-players should contact support@parsely.com before upgrading.
 
 ## [1.14](https://github.com/Parsely/wp-parsely/compare/1.13.1...1.14) - 2019-01-15
