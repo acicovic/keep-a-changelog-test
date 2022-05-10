@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.0.12 - 2022-05-10
+
+- Merge develop into trunk ([#58](https://github.com/acicovic/keep-a-changelog-test/pull/58))
+
 ## 1.0.11 - 2022-05-09
 
 - Merge develop into trunk ([#57](https://github.com/acicovic/keep-a-changelog-test/pull/57))
@@ -50,7 +54,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 
 - 
 - 
+- 
 - - Register the block using block.json file. [#62](https://github.com/Parsely/wp-parsely/pull/762)
+- 
 - 
 - 
 - 
@@ -58,11 +64,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 
 - 
 - 
+- 
 - - Added additional testing. [#724](https://github.com/Parsely/wp-parsely/pull/724)
 - 
 - 
 - 
+- 
 - - Removed tag setting. [#822](https://github.com/Parsely/wp-parsely/pull/822)
+- 
 - 
 - 
 - 
@@ -72,7 +81,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 
 - 
 - 
+- 
 - - Extracted Metadata rendering in a separate class. [#751](https://github.com/Parsely/wp-parsely/pull/751)
+- 
 - 
 - 
 - 
@@ -83,7 +94,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 
 - 
 - 
+- 
 - - @wordpress/babel-preset-default from 6.7.0 to 6.9.0
+- 
 - 
 - 
 - 
@@ -91,7 +104,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 
 - 
 - 
+- 
 - - @wordpress/blocks from 11.4.0 to 11.5.0
+- 
 - 
 - 
 - 
@@ -99,7 +114,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 
 - 
 - 
+- 
 - - @wordpress/compose from 5.3.0 to 5.4.0
+- 
 - 
 - 
 - 
@@ -107,7 +124,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 
 - 
 - 
+- 
 - - @wordpress/env from 4.4.0 to 4.6.0
+- 
 - 
 - 
 - 
@@ -115,7 +134,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 
 - 
 - 
+- 
 - - @wordpress/hooks from 3.6.0 to 3.7.0
+- 
 - 
 - 
 - 
@@ -123,11 +144,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 
 - 
 - 
+- 
 - - @wordpress/url from 3.6.0 to 3.7.0
 - 
 - 
 - 
+- 
 - - eslint-plugin-jest from 26.1.3 to 26.1.5
+- 
 - 
 - 
 - 
@@ -186,7 +210,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - Move `Rest` class into the `Endpoints` package. [#707](https://github.com/Parsely/wp-parsely/pull/707)
+- 
 - 
 - 
 - 
@@ -194,7 +220,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - Remove `$GLOBALS['parsely_ui_plugins_actions']` global variable. [#615](https://github.com/Parsely/wp-parsely/pull/615)
+- 
 - 
 - 
 - 
@@ -204,7 +232,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - Build the admin settings page script and enqueue built version. [#635](https://github.com/Parsely/wp-parsely/pull/635)
+- 
 - 
 - 
 - 
@@ -212,7 +242,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - Integrate Recommended Widget CSS into the build system and move it to the CSS folder. [#656](https://github.com/Parsely/wp-parsely/pull/656), [#658](https://github.com/Parsely/wp-parsely/pull/658)
+- 
 - 
 - 
 - 
@@ -222,7 +254,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - Update `@wordpress/dom-ready` package to `3.5.0`. [#741](https://github.com/Parsely/wp-parsely/pull/741)
+- 
 - 
 - 
 - 
@@ -230,7 +264,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - Update `@wordpress/env` package to `4.4.0`. [#663](https://github.com/Parsely/wp-parsely/pull/663), [#716](https://github.com/Parsely/wp-parsely/pull/716), [#734](https://github.com/Parsely/wp-parsely/pull/734)
+- 
 - 
 - 
 - 
@@ -238,7 +274,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - Update `@wordpress/hooks` package to `3.5.0`. [#717](https://github.com/Parsely/wp-parsely/pull/717), [#735](https://github.com/Parsely/wp-parsely/pull/735)
+- 
 - 
 - 
 - 
@@ -246,7 +284,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - Update `follow-redirects` package to `1.14.8`. [#610](https://github.com/Parsely/wp-parsely/pull/610), [#669](https://github.com/Parsely/wp-parsely/pull/669)
+- 
 - 
 - 
 - 
@@ -254,7 +294,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - Update `node-forge` package to `1.3.0`. [#738](https://github.com/Parsely/wp-parsely/pull/738)
+- 
 - 
 - 
 - 
@@ -262,11 +304,14 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - Update `actions/checkout` GitHub Action to `3`. [#701](https://github.com/Parsely/wp-parsely/pull/701)
 - 
 - 
 - 
+- 
 - - Update `actions/setup-node` GitHub Action to `3.0.0`. [#699](https://github.com/Parsely/wp-parsely/pull/699)
+- 
 - 
 - 
 - 
@@ -316,7 +361,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - `@wordpress/babel-preset-default` from 6.4.1 to 6.5.0
+- 
 - 
 - 
 - 
@@ -324,7 +371,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - `@wordpress/env` from 4.1.3 to 4.2.0
+- 
 - 
 - 
 - 
@@ -332,7 +381,9 @@ The 3.2.0 release introduces many new features, including:
 - 
 - 
 - 
+- 
 - - `@wordpress/scripts` from 19.2.3 to 20.0.2
+- 
 - 
 - 
 - 
@@ -440,8 +491,10 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - Strict typing (`strict_types=1`) to all files in the codebase [#420](https://github.com/Parsely/wp-parsely/pull/420).
 - - Passing a value to a function in wp-parsely with an incorrect type will now raise an error.
+- 
 - 
 - 
 - 
@@ -453,14 +506,17 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - `wp_parsely_enable_cfasync_tag` filter. [#473](https://github.com/Parsely/wp-parsely/pull/473).
 - - The Cloudflare `cfasync` attributes are now not rendered by default, but they can be enabled by returning `true` to this filter.
 - 
 - 
 - 
 - 
+- 
 - WordPress plugin uninstall script. [#444](https://github.com/Parsely/wp-parsely/pull/444)
 - - When the plugin is uninstalled, the options will be removed from the database. Deactivating the plugin will not cause the options to be deleted.
+- 
 - 
 - 
 - 
@@ -478,11 +534,14 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - - Extract tracker logic to `Parsely\Scripts` [#478](https://github.com/Parsely/wp-parsely/pull/478)
 - 
 - 
 - 
+- 
 - - Extract settings page to `Parsely\UI\Settings_Page`. [#467](https://github.com/Parsely/wp-parsely/pull/467)
+- 
 - 
 - 
 - 
@@ -493,11 +552,14 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - - `load_js_api()` to `enqueue_js_api()`.
 - 
 - 
 - 
+- 
 - - `load_js_tracker()` to `enqueue_js_tracker()`.
+- 
 - 
 - 
 - 
@@ -509,8 +571,10 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - `Parsely::get_current_url()` default value for argument `string $parsely_type` changed from `nonpost` to `non-post`. [#447](https://github.com/Parsely/wp-parsely/pull/447)
 - - This change has been done to better align with Parse.ly's backend.
+- 
 - 
 - 
 - 
@@ -521,8 +585,10 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - Replace multi-select fields with checkboxes on the settings page. [#482](https://github.com/Parsely/wp-parsely/pull/482)
 - - Existing selections will be retained.
+- 
 - 
 - 
 - 
@@ -532,7 +598,9 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - - `Parsely\UI\Recommended_Widget`: `get_api_url()`.
+- 
 - 
 - 
 - 
@@ -553,8 +621,10 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - Consistent return type on `insert_parsely_page`. [#443](https://github.com/Parsely/wp-parsely/pull/443)
 - - The function used to return `string|null|array`, now it returns `void`.
+- 
 - 
 - 
 - 
@@ -572,8 +642,10 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - Previously deprecated filter `parsely_filter_insert_javascript`. [#437](https://github.com/Parsely/wp-parsely/pull/437)
 - - Use `wp_parsely_load_js_tracker` instead.
+- 
 - 
 - 
 - 
@@ -584,8 +656,10 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - Custom Parse.ly load text domain. [#457](https://github.com/Parsely/wp-parsely/pull/457)
 - - Since the plugin now supports versions of WordPress that load custom text domains automatically, the plugins doesn't have to explicitly load the text domain itself.
+- 
 - 
 - 
 - 
@@ -596,10 +670,12 @@ If you are using the plugin without any code-level customizations (for instance,
 - 
 - 
 - 
+- 
 - Redundant code coverage annotations. [#469](https://github.com/Parsely/wp-parsely/pull/469)
 - Old init Python script. [#441](https://github.com/Parsely/wp-parsely/pull/441)
 - "Add admin warning for minimum requirements in 3.0" notice. [#424](https://github.com/Parsely/wp-parsely/pull/424)
 - - This was only added in the previous version of the plugin.
+- 
 - 
 - 
 - 
