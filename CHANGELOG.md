@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 1.0.15 - 2022-05-10
+
+- Merge develop into trunk ([#63](https://github.com/acicovic/keep-a-changelog-test/pull/63))
+
 ## [3.3.1](https://github.com/Parsely/wp-parsely/compare/3.3.0...3.3.1) - 2022-05-06
 
 ### Fixed
@@ -112,6 +116,7 @@ The 3.2.0 release introduces many new features, including:
 - Integrate Recommended Widget CSS into the build system and move it to the CSS folder. [#656](https://github.com/Parsely/wp-parsely/pull/656), [#658](https://github.com/Parsely/wp-parsely/pull/658)
 
 ### Removed
+
 - Remove `$GLOBALS['parsely_ui_plugins_actions']` global variable. [#615](https://github.com/Parsely/wp-parsely/pull/615)
 
 ### Dependency updates
@@ -172,13 +177,13 @@ The 3.2.0 release introduces many new features, including:
 
 ### Dependency updates
 
-  - Bumped dependencies. [#632](https://github.com/Parsely/wp-parsely/pull/632) [#637](https://github.com/Parsely/wp-parsely/pull/637)
-  - `@wordpress/dom-ready` from 2.13.2 to 3.3.0
-  - `@wordpress/babel-preset-default` from 6.4.1 to 6.5.0
-  - `@wordpress/e2e-test-utils` from 5.4.10 to 6.0.0
-  - `@wordpress/env` from 4.1.3 to 4.2.0
-  - `@wordpress/eslint-plugin` from 9.3.0 to 10.0.0
-  - `@wordpress/scripts` from 19.2.3 to 20.0.2
+- Bumped dependencies. [#632](https://github.com/Parsely/wp-parsely/pull/632) [#637](https://github.com/Parsely/wp-parsely/pull/637)
+- `@wordpress/dom-ready` from 2.13.2 to 3.3.0
+- `@wordpress/babel-preset-default` from 6.4.1 to 6.5.0
+- `@wordpress/e2e-test-utils` from 5.4.10 to 6.0.0
+- `@wordpress/env` from 4.1.3 to 4.2.0
+- `@wordpress/eslint-plugin` from 9.3.0 to 10.0.0
+- `@wordpress/scripts` from 19.2.3 to 20.0.2
 
 ### Removed
 
