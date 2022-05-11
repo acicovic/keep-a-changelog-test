@@ -63,7 +63,10 @@ jobs:
           release-notes: ${{ github.event.release.body }}
           
       - name: Update changelog 2
-        run: sed -i -e '0,/to/ s/to/TEST/' CHANGELOG.md
+        run: sed -i -e '0,/$REL/ s/$REL/\[&\]/($REL_URL)' CHANGELOG.md
+        env:
+          REL: ${{ github.event.release.tag_name }}
+          REL_URL: ${{ steps.update-changelog.outputs.release_compare_url }}
 
       - name: Commit updated changelog to trunk
         uses: stefanzweifel/git-auto-commit-action@v4
