@@ -63,7 +63,7 @@ jobs:
           latest-version: ${{ github.event.release.tag_name }}
           release-notes: ${{ github.event.release.body }}
           
-      - name: Update changelog 2
+      - name: Update changelog - Add release link
         run: sed -i -e "0,/$REL/ s:$REL:\[&\]\($REL_URL\):" CHANGELOG.md
         env:
           REL: ${{ github.event.release.tag_name }}
