@@ -63,7 +63,7 @@ jobs:
           release-notes: ${{ github.event.release.body }}
           
       - name: Update changelog 2
-        run: sed -e '0,/All/ s/All/Test/' CHANGELOG.md
+        run: sed -i -e '0,/to/ s/to/TEST/' CHANGELOG.md
 
       - name: Commit updated changelog to trunk
         uses: stefanzweifel/git-auto-commit-action@v4
