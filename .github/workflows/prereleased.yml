@@ -57,8 +57,8 @@ jobs:
 
      # Update changelog and push to trunk
       - name: Update changelog
-        id: update-changelog
         uses: stefanzweifel/changelog-updater-action@v1
+        id: 'update-changelog'
         with:
           latest-version: ${{ github.event.release.tag_name }}
           release-notes: ${{ github.event.release.body }}
