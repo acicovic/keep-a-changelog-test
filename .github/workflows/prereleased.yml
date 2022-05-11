@@ -58,16 +58,16 @@ jobs:
      # Update changelog and push to trunk
       - name: Update changelog
         uses: stefanzweifel/changelog-updater-action@v1
-        id: 'update-changelog'
+        id: "changelog-updater"
         with:
           latest-version: ${{ github.event.release.tag_name }}
           release-notes: ${{ github.event.release.body }}
           
-      - name: Update changelog 2
+      - name: Update changelog - Add release link
         run: sed -i -e "0,/$REL/ s:$REL:\[&\]\($REL_URL\):" CHANGELOG.md
         env:
           REL: ${{ github.event.release.tag_name }}
-          REL_URL: ${{ steps.update-changelog.outputs.release_compare_url }}
+          REL_URL: ${{ steps.changelog-updater.outputs.release_compare_url }}
 
       - name: Commit updated changelog to trunk
         uses: stefanzweifel/git-auto-commit-action@v4
