@@ -64,14 +64,13 @@ jobs:
           release-notes: ${{ github.event.release.body }}
           
       - name: Get previous tag name
-        id: previous_tag
-        run: echo "prev_rel=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))" >> $GITHUB_ENV
+        run: echo "tag_previous=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))" >> $GITHUB_ENV
           
       - name: Update changelog - Add release link
-        run: sed -i -e "0,/$REL/ s:$REL:\[&\]\($REL\.\.$PREV_REL\):" CHANGELOG.md
+        run: sed -i -e "0,/$REL/ s:$REL:\[&\]\(https\:\/\/github\.com\/Parsely\/wp\-parsely\/compare\/$TAG_PREVIOUS\.\.$TAG_NEW\):" CHANGELOG.md
         env:
-          REL: ${{ github.event.release.tag_name }}
-          PREV_REL: ${{ env.prev_rel }}
+          TAG_NEW: ${{ github.event.release.tag_name }}
+          TAG_PREVIOUS: ${{ env.tag_previous }}
 
       - name: Commit updated changelog to trunk
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
