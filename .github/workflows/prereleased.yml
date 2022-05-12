@@ -67,7 +67,7 @@ jobs:
         run: echo "tag_previous=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))" >> $GITHUB_ENV
           
       - name: Update changelog - Add release link
-        run: sed -i -e "0,/$REL/ s+$REL+\[&\]\(https\:\/\/github\.com\/Parsely\/wp\-parsely\/compare\/$TAG_PREVIOUS\.\.$TAG_NEW\)+" CHANGELOG.md
+        run: sed -i -e "0,/$TAG_NEW/ s+$TAG_NEW+\[&\]\(https\:\/\/github\.com\/Parsely\/wp\-parsely\/compare\/$TAG_PREVIOUS\.\.$TAG_NEW\)+" CHANGELOG.md
         env:
           TAG_NEW: ${{ github.event.release.tag_name }}
           TAG_PREVIOUS: ${{ env.tag_previous }}
