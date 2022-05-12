@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.38](https://github.com/Parsely/wp-parsely/compare/1.0.37...1.0.38) - 2022-05-12
+
+- Merge develop into trunk ([#86](https://github.com/acicovic/keep-a-changelog-test/pull/86))
+
 ## [3.3.1](https://github.com/Parsely/wp-parsely/compare/3.3.0...3.3.1) - 2022-05-06
 
 ### Fixed
