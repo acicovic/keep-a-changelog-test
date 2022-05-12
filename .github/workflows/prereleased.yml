@@ -62,6 +62,7 @@ jobs:
         with:
           latest-version: ${{ github.event.release.tag_name }}
           release-notes: ${{ github.event.release.body }}
+          compare-url-target-revision: ${{ github.event.release.target_commitish }}
           
       - name: Update changelog - Add release link
         run: sed -i -e "0,/$REL/ s:$REL:\[&\]\($REL_URL\):" CHANGELOG.md
