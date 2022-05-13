@@ -20,6 +20,10 @@ jobs:
           MY_VERSION=$(git describe --tags --abbrev=0)
           sed -i "s/Stable tag: .*  $/Stable tag: $MY_VERSION  /" README.md
           sed -i "s/\"version\": \".*\"$/\"version\": \"MY_VERSION\"/" package.json
+          sed -i "s/export const PLUGIN_VERSION = '.*'/export const PLUGIN_VERSION = '$MY_VERSION'/" tests/e2e/utils.js
+          sed -i "s/ \\\* Version:           .*$/ \\\* Version:           $MY_VERSION/" wp-parsely.php
+          sed -i "s/const PARSELY_VERSION = '.*'/const PARSELY_VERSION = '$MY_VERSION'/" wp-parsely.php
+
 #      - name: Update plugin version in README.md
 #        uses: tj-actions/sync-release-version@v11
 #        with:
@@ -35,23 +39,23 @@ jobs:
       - name: Update plugin version in package-lock.json
         run: npm install
 
-      - name: Update plugin version in tests/e2e/utils.js
-        uses: tj-actions/sync-release-version@v11
-        with:
-          pattern: "export const PLUGIN_VERSION = '"
-          paths: tests/e2e/utils.js
+#      - name: Update plugin version in tests/e2e/utils.js
+#        uses: tj-actions/sync-release-version@v11
+#        with:
+#          pattern: "export const PLUGIN_VERSION = '"
+#          paths: tests/e2e/utils.js
           
-      - name: Update plugin version in wp-parsely.php - Plugin header
-        uses: tj-actions/sync-release-version@v11
-        with:
-          pattern: ' \* Version:           '
-          paths: wp-parsely.php
+#      - name: Update plugin version in wp-parsely.php - Plugin header
+#        uses: tj-actions/sync-release-version@v11
+#        with:
+#          pattern: ' \* Version:           '
+#          paths: wp-parsely.php
           
-      - name: Update plugin version in wp-parsely.php - Version constant
-        uses: tj-actions/sync-release-version@v11
-        with:
-          pattern: "const PARSELY_VERSION = '"
-          paths: wp-parsely.php
+#      - name: Update plugin version in wp-parsely.php - Version constant
+#        uses: tj-actions/sync-release-version@v11
+#        with:
+#          pattern: "const PARSELY_VERSION = '"
+#          paths: wp-parsely.php
             
       - name: Commit version bumps to trunk
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
