@@ -15,11 +15,15 @@ jobs:
           ref: ${{ github.event.release.target_commitish }}
  
      # Bump version numbers and push to trunk
-      - name: Update plugin version in README.md
-        uses: tj-actions/sync-release-version@v11
-        with:
-          pattern: 'Stable tag: '
-          paths: README.md
+      - name: Set environment variable
+        run: |
+          echo "MY_VERSION=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+          run: sed -i -e "s/Stable tag: .*$/Stable tag: $MY_VERSION/" README.md
+#      - name: Update plugin version in README.md
+#        uses: tj-actions/sync-release-version@v11
+#        with:
+#          pattern: 'Stable tag: '
+#          paths: README.md
           
       - name: Update plugin version in package.json
         uses: tj-actions/sync-release-version@v11
