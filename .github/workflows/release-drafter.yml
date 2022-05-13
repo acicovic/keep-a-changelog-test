@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   update_release_draft:
-    if: github.event.pull_request.merged == true && github.head_ref == 'develop'
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
 
     steps:
