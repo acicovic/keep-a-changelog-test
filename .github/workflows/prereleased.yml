@@ -19,7 +19,7 @@ jobs:
         run: |
           MY_VERSION=$(git describe --tags --abbrev=0)
           sed -i "s/Stable tag: .*  $/Stable tag: $MY_VERSION  /" README.md
-          sed -i "s/^\t\"version\": \".*\"/^\t\"version\": \"$MY_VERSION\"/" package.json
+          sed -i "s/\"version\": \".*\"/\"version\": \"$MY_VERSION\"/" package.json
           sed -i "s/export const PLUGIN_VERSION = '.*'/export const PLUGIN_VERSION = '$MY_VERSION'/" tests/e2e/utils.js
           sed -i "s/ \* Version:           .*$/ \* Version:           $MY_VERSION/" wp-parsely.php
           sed -i "s/const PARSELY_VERSION = '.*'/const PARSELY_VERSION = '$MY_VERSION'/" wp-parsely.php
