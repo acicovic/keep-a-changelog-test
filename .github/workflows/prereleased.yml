@@ -18,18 +18,19 @@ jobs:
       - name: Set environment variable
         run: |
           MY_VERSION=$(git describe --tags --abbrev=0)
-          sed -i -e "s/Stable tag: .*  $/Stable tag: $MY_VERSION  /" README.md
+          sed -i "s/Stable tag: .*  $/Stable tag: $MY_VERSION  /" README.md
+          sed -i "s/\"version\": \".*\"$/\"version\": \"MY_VERSION\"/" package.json
 #      - name: Update plugin version in README.md
 #        uses: tj-actions/sync-release-version@v11
 #        with:
 #          pattern: 'Stable tag: '
 #          paths: README.md
           
-      - name: Update plugin version in package.json
-        uses: tj-actions/sync-release-version@v11
-        with:
-          pattern: '"version": "'
-          paths: package.json
+#      - name: Update plugin version in package.json
+#        uses: tj-actions/sync-release-version@v11
+#        with:
+#          pattern: '"version": "'
+#          paths: package.json
           
       - name: Update plugin version in package-lock.json
         run: npm install
