@@ -23,9 +23,7 @@ jobs:
           sed -i "s/export const PLUGIN_VERSION = '.*'/export const PLUGIN_VERSION = '$NEW_VERSION'/" tests/e2e/utils.js
           sed -i "s/ \* Version:           .*$/ \* Version:           $NEW_VERSION/" wp-parsely.php
           sed -i "s/const PARSELY_VERSION = '.*'/const PARSELY_VERSION = '$NEW_VERSION'/" wp-parsely.php
-
-      - name: Bump version numbers in package-lock.json
-        run: npm install
+          npm install
 
       - name: Commit version bumps to trunk
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
