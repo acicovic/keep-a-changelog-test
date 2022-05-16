@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
           ref: ${{ github.event.release.target_commitish }}
@@ -39,14 +40,16 @@ jobs:
           latest-version: ${{ github.event.release.tag_name }}
           release-notes: ${{ github.event.release.body }}
           
-      - name: Prepare to generate comparison URL
-        run: echo "tag_previous=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))" >> $GITHUB_ENV
+#      - name: Prepare to generate comparison URL
+#        run: echo "tag_previous=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))" >> $GITHUB_ENV
           
       - name: Add comparison URL to changelog
-        run: sed -i -e "0,/$TAG_NEW/ s+$TAG_NEW+\[&\]\(https\:\/\/github\.com\/Parsely\/wp\-parsely\/compare\/$TAG_PREVIOUS\.\.\.$TAG_NEW\)+" CHANGELOG.md
+        run: |
+          TAG_PREVIOUS=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))
+          sed -i -e "0,/$TAG_NEW/ s+$TAG_NEW+\[&\]\(https\:\/\/github\.com\/Parsely\/wp\-parsely\/compare\/$TAG_PREVIOUS\.\.\.$TAG_NEW\)+" CHANGELOG.md
         env:
           TAG_NEW: ${{ github.event.release.tag_name }}
-          TAG_PREVIOUS: ${{ env.tag_previous }}
+#          TAG_PREVIOUS: ${{ env.tag_previous }}
 
       - name: Commit updated changelog to trunk
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
