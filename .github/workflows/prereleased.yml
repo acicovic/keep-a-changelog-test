@@ -13,50 +13,18 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.event.release.target_commitish }}
- 
+
      # Bump version numbers and push to trunk
-      - name: Set environment variable
+      - name: Bump version numbers
         run: |
-          MY_VERSION=$(git describe --tags --abbrev=0)
-          sed -i "s/Stable tag: .*  $/Stable tag: $MY_VERSION  /" README.md
-          sed -i "s/\"version\": \".*\"/\"version\": \"$MY_VERSION\"/" package.json
-          sed -i "s/export const PLUGIN_VERSION = '.*'/export const PLUGIN_VERSION = '$MY_VERSION'/" tests/e2e/utils.js
-          sed -i "s/ \* Version:           .*$/ \* Version:           $MY_VERSION/" wp-parsely.php
-          sed -i "s/const PARSELY_VERSION = '.*'/const PARSELY_VERSION = '$MY_VERSION'/" wp-parsely.php
+          NEW_VERSION=$(git describe --tags --abbrev=0)
+          sed -i "s/Stable tag: .*  $/Stable tag: $NEW_VERSION  /" README.md
+          sed -i "s/\"version\": \".*\"/\"version\": \"$NEW_VERSION\"/" package.json
+          sed -i "s/export const PLUGIN_VERSION = '.*'/export const PLUGIN_VERSION = '$NEW_VERSION'/" tests/e2e/utils.js
+          sed -i "s/ \* Version:           .*$/ \* Version:           $NEW_VERSION/" wp-parsely.php
+          sed -i "s/const PARSELY_VERSION = '.*'/const PARSELY_VERSION = '$NEW_VERSION'/" wp-parsely.php
+          npm install
 
-#      - name: Update plugin version in README.md
-#        uses: tj-actions/sync-release-version@v11
-#        with:
-#          pattern: 'Stable tag: '
-#          paths: README.md
-          
-#      - name: Update plugin version in package.json
-#        uses: tj-actions/sync-release-version@v11
-#        with:
-#          pattern: '"version": "'
-#          paths: package.json
-          
-      - name: Update plugin version in package-lock.json
-        run: npm install
-
-#      - name: Update plugin version in tests/e2e/utils.js
-#        uses: tj-actions/sync-release-version@v11
-#        with:
-#          pattern: "export const PLUGIN_VERSION = '"
-#          paths: tests/e2e/utils.js
-          
-#      - name: Update plugin version in wp-parsely.php - Plugin header
-#        uses: tj-actions/sync-release-version@v11
-#        with:
-#          pattern: ' \* Version:           '
-#          paths: wp-parsely.php
-          
-#      - name: Update plugin version in wp-parsely.php - Version constant
-#        uses: tj-actions/sync-release-version@v11
-#        with:
-#          pattern: "const PARSELY_VERSION = '"
-#          paths: wp-parsely.php
-            
       - name: Commit version bumps to trunk
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
         with:
@@ -65,16 +33,16 @@ jobs:
           file_pattern: README.md package-lock.json package.json tests/e2e/utils.js wp-parsely.php
 
      # Update changelog and push to trunk
-      - name: Update changelog
+      - name: Add latest release notes to changelog
         uses: stefanzweifel/changelog-updater-action@v1.5.0
         with:
           latest-version: ${{ github.event.release.tag_name }}
           release-notes: ${{ github.event.release.body }}
           
-      - name: Get previous tag name
+      - name: Prepare to generate comparison URL
         run: echo "tag_previous=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))" >> $GITHUB_ENV
           
-      - name: Update changelog - Add release link
+      - name: Add comparison URL to changelog
         run: sed -i -e "0,/$TAG_NEW/ s+$TAG_NEW+\[&\]\(https\:\/\/github\.com\/Parsely\/wp\-parsely\/compare\/$TAG_PREVIOUS\.\.\.$TAG_NEW\)+" CHANGELOG.md
         env:
           TAG_NEW: ${{ github.event.release.tag_name }}
