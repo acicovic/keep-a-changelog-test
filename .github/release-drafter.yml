@@ -2,7 +2,7 @@ name-template: '$RESOLVED_VERSION'
 tag-template: '$RESOLVED_VERSION'
 template: |
   $CHANGES
-change-template: '- $TITLE ([#$NUMBER](https://github.com/acicovic/keep-a-changelog-test/pull/$NUMBER))'
+change-template: '- $TITLE ([#$NUMBER](https://github.com/Parsely/wp-parsely/pull/$NUMBER))'
 categories:
   - title: Added
     labels:
