@@ -30,7 +30,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
         with:
           branch: trunk
-          commit_message: Update plugin version to ${{ github.event.release.tag_name }}
+          commit_message: Bump plugin version number to ${{ github.event.release.tag_name }}
           file_pattern: README.md package-lock.json package.json tests/e2e/utils.js wp-parsely.php
 
      # Update changelog and push to trunk
@@ -39,21 +39,17 @@ jobs:
         with:
           latest-version: ${{ github.event.release.tag_name }}
           release-notes: ${{ github.event.release.body }}
-          
-#      - name: Prepare to generate comparison URL
-#        run: echo "tag_previous=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))" >> $GITHUB_ENV
-          
+
       - name: Add comparison URL to changelog
         run: |
           TAG_PREVIOUS=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))
           sed -i -e "0,/$TAG_NEW/ s+$TAG_NEW+\[&\]\(https\:\/\/github\.com\/Parsely\/wp\-parsely\/compare\/$TAG_PREVIOUS\.\.\.$TAG_NEW\)+" CHANGELOG.md
         env:
           TAG_NEW: ${{ github.event.release.tag_name }}
-#          TAG_PREVIOUS: ${{ env.tag_previous }}
 
       - name: Commit updated changelog to trunk
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
         with:
           branch: trunk
-          commit_message: Import release notes into CHANGELOG.md
+          commit_message: Update CHANGELOG.md for plugin version ${{ github.event.release.tag_name }}
           file_pattern: CHANGELOG.md
