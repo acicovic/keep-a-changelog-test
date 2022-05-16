@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.53](https://github.com/Parsely/wp-parsely/compare/1.0.52...1.0.53) - 2022-05-16
+
+- Update release-drafter.yml ([#104](https://github.com/Parsely/wp-parsely/pull/104))
+- Update release-drafter.yml ([#103](https://github.com/Parsely/wp-parsely/pull/103))
+- Update release-drafter.yml ([#102](https://github.com/Parsely/wp-parsely/pull/102))
+- Merge develop into trunk ([#101](https://github.com/Parsely/wp-parsely/pull/101))
+
 ## [1.0.52](https://github.com/Parsely/wp-parsely/compare/1.0.51...1.0.52) - 2022-05-16
 
 - Merge develop into trunk ([#100](https://github.com/acicovic/keep-a-changelog-test/pull/100))
