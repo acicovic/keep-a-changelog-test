@@ -1,8 +1,7 @@
-name-template: '$RESOLVED_VERSION'
-tag-template: '$RESOLVED_VERSION'
-template: |
-  $CHANGES
-change-template: '- $TITLE ([#$NUMBER](https://github.com/Parsely/wp-parsely/pull/$NUMBER))'
+name-template: $RESOLVED_VERSION
+tag-template: $RESOLVED_VERSION
+template: $CHANGES
+change-template: - $TITLE ([#$NUMBER](https://github.com/Parsely/wp-parsely/pull/$NUMBER))
 categories:
   - title: Added
     labels:
@@ -25,7 +24,7 @@ categories:
       - 'changelog:security'
   - title: Dependency Updates
     labels:
-      - 'Component: Dependencies
+      - 'Component: Dependencies'
 
 version-resolver:
   major:
