@@ -27,4 +27,6 @@ jobs:
         run: |
           SHA=$(git rev-parse trunk)
           TAG=$(git describe --tags --abbrev=0)
+          git config user.name "github-actions[bot]"
+          git config user.email "<>"
           git tag -fa $TAG $SHA
