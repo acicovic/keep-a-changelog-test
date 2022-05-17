@@ -28,6 +28,6 @@ jobs:
           SHA=$(git rev-parse trunk)
           TAG=$(git describe --tags --abbrev=0)
           git config user.name "github-actions[bot]"
-          git config user.email "<>"
-          git tag -fa $TAG $SHA -m "Force push $TAG tag to $SHA"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -fa $TAG $SHA -m "Release $TAG"
           git push --force origin $TAG
