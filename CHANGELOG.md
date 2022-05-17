@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.55](https://github.com/Parsely/wp-parsely/compare/1.0.54...1.0.55) - 2022-05-17
+
+## Changed
+
+- Remove unneeded part of expression ([#106](https://github.com/Parsely/wp-parsely/pull/106))
+
 ## [1.0.53](https://github.com/Parsely/wp-parsely/compare/1.0.52...1.0.53) - 2022-05-16
 
 - Update release-drafter.yml ([#104](https://github.com/Parsely/wp-parsely/pull/104))
