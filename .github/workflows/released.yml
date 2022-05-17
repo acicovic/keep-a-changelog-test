@@ -30,3 +30,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "<>"
           git tag -fa $TAG $SHA -m "Force push $TAG tag to $SHA"
+          git push --force origin $TAG
