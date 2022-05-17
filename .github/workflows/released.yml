@@ -29,4 +29,4 @@ jobs:
           TAG=$(git describe --tags --abbrev=0)
           git config user.name "github-actions[bot]"
           git config user.email "<>"
-          git tag -fa $TAG $SHA
+          git tag -fa $TAG $SHA -m "Force push $TAG tag to $SHA"
