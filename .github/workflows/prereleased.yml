@@ -18,8 +18,7 @@ jobs:
       - name: Branch protection OFF
         uses: octokit/request-action@v2.x
         with:
-          route: PUT /repos/acicovic/keep-a-changelog-test/branches/trunk/protection/enforce_admins
-          enabled: false
+          route: DELETE /repos/acicovic/keep-a-changelog-test/branches/trunk/protection/enforce_admins
         env:
           GITHUB_TOKEN: ${{ secrets.MYPAT }}
 
@@ -65,7 +64,6 @@ jobs:
       - name: Branch protection ON
         uses: octokit/request-action@v2.x
         with:
-          route: PUT /repos/acicovic/keep-a-changelog-test/branches/trunk/protection/enforce_admins
-          enabled: true
+          route: POST /repos/acicovic/keep-a-changelog-test/branches/trunk/protection/enforce_admins
         env:
           GITHUB_TOKEN: ${{ secrets.MYPAT }}
