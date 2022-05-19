@@ -32,7 +32,7 @@ jobs:
           route: PUT /repos/acicovic/keep-a-changelog-test/branches/trunk/protection
           enforce_admins: false
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.MYPAT }}
 
       - name: Commit version bumps to trunk
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
