@@ -18,7 +18,7 @@ jobs:
       - name: Branch protection OFF
         uses: octokit/request-action@v2.x
         with:
-          route: DELETE /repos/acicovic/keep-a-changelog-test/branches/trunk/protection
+          route: DELETE /repos/acicovic/keep-a-changelog-test/branches/trunk/protection/required_pull_request_reviews
         env:
           GITHUB_TOKEN: ${{ secrets.MYPAT }}
 
