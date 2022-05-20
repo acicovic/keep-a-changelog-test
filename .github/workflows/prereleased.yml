@@ -14,15 +14,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.event.release.target_commitish }}
-          
-      - name: Disable pull request protection
-        uses: octokit/request-action@v2.x
-        with:
-          route: DELETE /repos/acicovic/keep-a-changelog-test/branches/trunk/protection/required_pull_request_reviews
-        env:
-          GITHUB_TOKEN: ${{ secrets.MYPAT }}
 
-     # Bump version numbers and push to trunk
       - name: Bump version numbers
         run: |
           NEW_VERSION=$(git describe --tags --abbrev=0)
@@ -32,15 +24,7 @@ jobs:
           sed -i "s/ \* Version:           .*$/ \* Version:           $NEW_VERSION/" wp-parsely.php
           sed -i "s/const PARSELY_VERSION = '.*'/const PARSELY_VERSION = '$NEW_VERSION'/" wp-parsely.php
           npm install
-
-      - name: Commit version bumps to trunk
-        uses: stefanzweifel/git-auto-commit-action@v4.14.1
-        with:
-          branch: trunk
-          commit_message: Bump plugin version number to ${{ github.event.release.tag_name }}
-          file_pattern: README.md package-lock.json package.json tests/e2e/utils.js wp-parsely.php
-
-     # Update changelog and push to trunk
+          
       - name: Add latest release notes to changelog
         uses: stefanzweifel/changelog-updater-action@v1.5.0
         with:
@@ -53,16 +37,23 @@ jobs:
           sed -i -e "0,/$TAG_NEW/ s+$TAG_NEW+\[&\]\(https\:\/\/github\.com\/Parsely\/wp\-parsely\/compare\/$TAG_PREVIOUS\.\.\.$TAG_NEW\)+" CHANGELOG.md
         env:
           TAG_NEW: ${{ github.event.release.tag_name }}
+          
+      - name: Disable pull request protection
+        uses: octokit/request-action@v2.1.4
+        with:
+          route: DELETE /repos/acicovic/keep-a-changelog-test/branches/trunk/protection/required_pull_request_reviews
+        env:
+          GITHUB_TOKEN: ${{ secrets.MYPAT }}
 
-      - name: Commit updated changelog to trunk
+      - name: Commit version bump and changelog to trunk
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
         with:
           branch: trunk
-          commit_message: Update CHANGELOG.md for plugin version ${{ github.event.release.tag_name }}
-          file_pattern: CHANGELOG.md
+          commit_message: Bump plugin version to ${{ github.event.release.tag_name }} and update changelog
+          file_pattern: CHANGELOG.md README.md package-lock.json package.json tests/e2e/utils.js wp-parsely.php
 
       - name: Re-enable pull request protection
-        uses: octokit/request-action@v2.x
+        uses: octokit/request-action@v2.1.4
         with:
           route: PATCH /repos/acicovic/keep-a-changelog-test/branches/trunk/protection/required_pull_request_reviews
           dismiss_stale_reviews: true
