@@ -18,7 +18,7 @@ jobs:
       - name: Branch protection OFF
         uses: octokit/request-action@v2.x
         with:
-          route: DELETE /repos/acicovic/keep-a-changelog-test/branches/trunk/protection/enforce_admins
+          route: DELETE /repos/acicovic/keep-a-changelog-test/branches/trunk/protection
         env:
           GITHUB_TOKEN: ${{ secrets.MYPAT }}
 
@@ -60,7 +60,7 @@ jobs:
           branch: trunk
           commit_message: Update CHANGELOG.md for plugin version ${{ github.event.release.tag_name }}
           file_pattern: CHANGELOG.md
-          
+
       - name: Branch protection ON
         uses: octokit/request-action@v2.x
         with:
